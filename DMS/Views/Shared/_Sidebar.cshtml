@@ -1,0 +1,65 @@
+﻿@using WebHelpers.Mvc5
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Menu *@    
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">Menu</li>
+            <li class="@Url.IsLinkActive("Index", "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-dashboard"></i> <span>Home</span></a>
+            </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-user-circle-o"></i> <span>Users</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="@Url.IsLinkActive("Create", "User")"><a href="@Url.Action("Create", "User")">Create User</a></li>
+                        <li class="@Url.IsLinkActive("Index", "User")"><a href="@Url.Action("Index", "User")">Manage Users</a></li>
+                    </ul>
+                </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-building-o"></i> <span>Department</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Create", "Department")"><a href="@Url.Action("Create", "Department")">Create Department</a></li>
+                    <li class="@Url.IsLinkActive("Index", "Department")"><a href="@Url.Action("Index", "Department")">Manage Departments</a></li>
+                </ul>
+            </li>}
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-id-card-o"></i> <span>Category</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Create", "Category")"><a href="@Url.Action("Create", "Category")">Create Category</a></li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="@Url.IsLinkActive("Index", "Category")"><a href="@Url.Action("Index", "Category")">Manage Category</a></li>
+                    }</ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-file-text"></i> <span>Document</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Create", "Document")"><a href="@Url.Action("Create", "Document")">Upload Documents</a></li>
+                    <li class="@Url.IsLinkActive("Index", "Document")"><a href="@Url.Action("Index", "Document")">Manage Documents</a></li>
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

@@ -1,0 +1,50 @@
+﻿@model DMS.Models.ViewModel.ProfileVM
+
+@{
+    ViewBag.Title = "Profile Details";
+}
+
+<div>
+    <hr />
+    <div class="tab-pane" id="settings">
+        <div class="form-horizontal">
+            @if (TempData["Message"] != "")
+            {
+                <div class="text-blue">@TempData["Message"]</div>
+            }
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.FirstName) :</label>
+
+                <div class="col-sm-10">
+                    <label for="inputName" class="form-control">@Html.DisplayFor(model => model.FirstName)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.LastName) :</label>
+
+                <div class="col-sm-10">
+                    <label for="inputName" class="form-control">@Html.DisplayFor(model => model.LastName)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Email) :</label>
+
+                <div class="col-sm-10">
+                    <label for="inputName" class="form-control">@Html.DisplayFor(model => model.Email)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.DeptName) :</label>
+
+                <div class="col-sm-10">
+                    <label for="inputName" class="form-control">@Html.DisplayFor(model => model.DeptName)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <a href="/Profile/ChangePassword" class="btn btn-danger">Change Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

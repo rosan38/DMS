@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Delete Document";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Are you sure you want to delete this Document?</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="form-actions">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a href="/DOcument/Index" class="btn btn-foursquare">Back</a>
+    </div>
+}
+

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DMS.Models.ViewModel.ProfileVM>
+
+@{
+    ViewBag.Title = "Document List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["Message"] != "")
+{
+    <div class="text-blue">@TempData["Message"]</div>
+}
+
+
+@if (ViewBag.Message != "")
+{
+    <div class="text-blue">@ViewBag.Message</div>
+}
+
+    <form action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                <input type="text" class="form-group" name="str" placeholder="Search Documents" />
+                <input type="submit" value="Search" class="btn btn-instagram btn-sm" />
+                <input type="submit" value="Back" class="btn btn-bitbucket btn-sm" />
+            </p>
+        </div>
+    </form>
+
+<div class="box">
+    <div class="box-body">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    S.N.
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DocumentName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    Uploaded By :
+                </th>
+                <th>
+                    Actions :
+                </th>
+            </tr>
+            @{int index = 1;}
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @index
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Download", "Download", new { id = item.DocumentId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DocumentId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+                index++;
+            }
+        </table>
+    </div>
+</div>

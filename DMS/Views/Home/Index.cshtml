@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.Description = "Home Page";
+}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>@ViewBag.user</h3>
+                            <p>Users</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        </div>
+                        <a href="/User/Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>@ViewBag.department<sup style="font-size: 20px"></sup></h3>
+                            <p>Departments </p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-building-o" aria-hidden="true"></i>
+                        </div>
+                        <a href="/Department/Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>}
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>@ViewBag.category</h3>
+                            <p>Categories</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                        </div>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a href="/Category/Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        }</div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>@ViewBag.document</h3>
+                            <p>Documents</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                        </div>
+                        <a href="/Document/Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
