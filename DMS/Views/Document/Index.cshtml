@@ -65,6 +65,7 @@
                 <td>
                     @Html.ActionLink("Download", "Download", new { id = item.DocumentId }, new { @class = "btn btn-primary" })
                     @Html.ActionLink("Delete", "Delete", new { id = item.DocumentId }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("View", "DocView", new { id = item.DocumentId }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
                 index++;

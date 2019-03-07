@@ -37,5 +37,15 @@
     <script src="@EnumHandler.HandlerUrl"></script>
     @Scripts.Render("~/Bundles/js")
     @RenderSection("ViewSpecificJavascript", required: false)
+    <script type="text/javascript">
+    var documentViewer = null;
+    $(function () {
+        var docURI = '@ViewBag.docURI';
+        if(docURI != null) {
+            // Load the server-side document using its URI
+            documentViewer.loadDocument(docURI);
+        }
+    });
+    </script>
 </body>
 </html>

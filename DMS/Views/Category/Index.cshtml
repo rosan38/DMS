@@ -16,15 +16,15 @@
     <div class="text-blue">@ViewBag.Message</div>
 }
 
-    <form action="Index" method="get">
-        <div class="form-actions no-color">
-            <p>
-                <input type="text" class="form-group" name="str" placeholder="Search Documents" />
-                <input type="submit" value="Search" class="btn btn-instagram btn-sm" />
-                <input type="submit" value="Back" class="btn btn-bitbucket btn-sm" />
-            </p>
-        </div>
-    </form>
+<form action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            <input type="text" class="form-group" name="str" placeholder="Search Caategory" />
+            <input type="submit" value="Search" class="btn btn-instagram btn-sm" />
+            <input type="submit" value="Back" class="btn btn-bitbucket btn-sm" />
+        </p>
+    </div>
+</form>
 
 <div class="box">
 
@@ -47,21 +47,21 @@
             @{int index = 1;}
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @index
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger" })
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @index
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
                 index++;
             }
         </table>

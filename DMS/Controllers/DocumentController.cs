@@ -93,22 +93,22 @@ namespace DMS.Controllers
                 {
                     string message = "";
                     int id = Convert.ToInt32(Session["id"]);
+                    string fileName = Path.GetFileName(file.FileName).Replace(" ", "");
                     var validate = (from p in dc.Documents
-                                    where (p.DocumentName == file.FileName) && (p.CategoryId == profileVM.CategoryId)
+                                    where (p.DocumentName == fileName) && (p.CategoryId == profileVM.CategoryId)
                                     select p
                                      ).FirstOrDefault();
                     if (file.ContentLength > 0 && validate == null)
                     {
-                        string FileName = Path.GetFileName(file.FileName);
                         var category = dc.Categories.Where(a => a.CategoryId == profileVM.CategoryId).FirstOrDefault();
                         string path = Path.Combine(Server.MapPath("//Documents/" + category.CategoryName));
                         if (!Directory.Exists(path))
                         {
                             Directory.CreateDirectory(path);
                         }
-                        string paths = Path.Combine(Server.MapPath("//Documents/" + category.CategoryName), FileName);
+                        string paths = Path.Combine(Server.MapPath("//Documents/" + category.CategoryName), fileName);
                         Document document = new Document();
-                        document.DocumentName = FileName;
+                        document.DocumentName = fileName;
                         document.DocumentPath = path.ToString();
                         document.DocumentDetails = profileVM.DocumentDetails;
                         document.CategoryId = profileVM.CategoryId;
@@ -176,6 +176,22 @@ namespace DMS.Controllers
                 string strPhysicalFolder = Server.MapPath("//Documents/" + data.Category.CategoryName + "/");
                 string strFileFullPath = strPhysicalFolder + data.DocumentName;
                 return File(strFileFullPath, System.Net.Mime.MediaTypeNames.Application.Octet, data.DocumentName);
+            }
+        }
+
+        public ActionResult DocView(int id)
+        {
+            using (DMSDBContext dc = new DMSDBContext())
+            {
+                var data = dc.Documents.Where(x => x.DocumentId == id).FirstOrDefault();
+                Gnostice.Documents.WebHandler.ViewerController viewerController =
+
+            new Gnostice.Documents.WebHandler.ViewerController();
+                // Load the file present under App_Data folder
+                String filenameWithPath = Server.MapPath("//Documents/" + data.Category.CategoryName + "/" +data.DocumentName);
+                // Load the server-side document using the document URI
+                ViewBag.docURI = viewerController.LoadDocument(filenameWithPath);
+                return View();
             }
         }
     }

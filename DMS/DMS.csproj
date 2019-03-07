@@ -42,7 +42,31 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Gnostice.Core, Version=18.2.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\Gnostice.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Documents, Version=18.2.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\Gnostice.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Documents.WebHandler, Version=18.2.0.0, Culture=neutral, PublicKeyToken=fc8cb3ab6a24df63, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\Gnostice.Documents.WebHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.XtremeFontEngine.4.0, Version=1.0.2056.447, Culture=neutral, PublicKeyToken=461de9da64be3a84, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\Gnostice.XtremeFontEngine.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.XtremeImageEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=67e9a3a7c22f1690, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\Gnostice.XtremeImageEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\XtremeDocumentStudio.NETHTML.18.2.1\lib\net40\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -72,9 +96,6 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RouteJs, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RouteJs.Mvc5.2.2.0\lib\net45\RouteJs.dll</HintPath>
@@ -117,6 +138,84 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Gnostice\default.theme.css" />
+    <Content Include="Content\Gnostice\documentviewer.css" />
+    <Content Include="Content\Gnostice\Images\accepted-disabled.png" />
+    <Content Include="Content\Gnostice\Images\accepted-enabled.png" />
+    <Content Include="Content\Gnostice\Images\actionlist.png" />
+    <Content Include="Content\Gnostice\Images\anticlock.png" />
+    <Content Include="Content\Gnostice\Images\arrow-221-16.png" />
+    <Content Include="Content\Gnostice\Images\arrow-down.png" />
+    <Content Include="Content\Gnostice\Images\arrow-left.png" />
+    <Content Include="Content\Gnostice\Images\arrow-right.png" />
+    <Content Include="Content\Gnostice\Images\arrow-up.png" />
+    <Content Include="Content\Gnostice\Images\bookmark.png" />
+    <Content Include="Content\Gnostice\Images\bubble-up-gray.png" />
+    <Content Include="Content\Gnostice\Images\cancel-disabled.png" />
+    <Content Include="Content\Gnostice\Images\cancel-enabled.png" />
+    <Content Include="Content\Gnostice\Images\clockwise.png" />
+    <Content Include="Content\Gnostice\Images\close-window.png" />
+    <Content Include="Content\Gnostice\Images\close-window1.png" />
+    <Content Include="Content\Gnostice\Images\close.png" />
+    <Content Include="Content\Gnostice\Images\comment-png-16.png" />
+    <Content Include="Content\Gnostice\Images\comment1.png" />
+    <Content Include="Content\Gnostice\Images\completed-disabled.png" />
+    <Content Include="Content\Gnostice\Images\completed-enabled.png" />
+    <Content Include="Content\Gnostice\Images\delete.png" />
+    <Content Include="Content\Gnostice\Images\downArrow.png" />
+    <Content Include="Content\Gnostice\Images\download.png" />
+    <Content Include="Content\Gnostice\Images\dragginghand.cur" />
+    <Content Include="Content\Gnostice\Images\dragginghand.png" />
+    <Content Include="Content\Gnostice\Images\dropdown.png" />
+    <Content Include="Content\Gnostice\Images\error.png" />
+    <Content Include="Content\Gnostice\Images\favicon.cur" />
+    <Content Include="Content\Gnostice\Images\find.png" />
+    <Content Include="Content\Gnostice\Images\first.png" />
+    <Content Include="Content\Gnostice\Images\fullscreen-exit.png" />
+    <Content Include="Content\Gnostice\Images\fullscreen.png" />
+    <Content Include="Content\Gnostice\Images\hand.ico" />
+    <Content Include="Content\Gnostice\Images\hand.png" />
+    <Content Include="Content\Gnostice\Images\info.png" />
+    <Content Include="Content\Gnostice\Images\invert.png" />
+    <Content Include="Content\Gnostice\Images\last.png" />
+    <Content Include="Content\Gnostice\Images\loadDocument.gif" />
+    <Content Include="Content\Gnostice\Images\loading_background.gif" />
+    <Content Include="Content\Gnostice\Images\lock-32.png" />
+    <Content Include="Content\Gnostice\Images\minimize-white.png" />
+    <Content Include="Content\Gnostice\Images\minimize-window-gray.png" />
+    <Content Include="Content\Gnostice\Images\minimize.png" />
+    <Content Include="Content\Gnostice\Images\minimize_left.png" />
+    <Content Include="Content\Gnostice\Images\minimize_right.png" />
+    <Content Include="Content\Gnostice\Images\next.png" />
+    <Content Include="Content\Gnostice\Images\open.png" />
+    <Content Include="Content\Gnostice\Images\pagecount.gif" />
+    <Content Include="Content\Gnostice\Images\prev.png" />
+    <Content Include="Content\Gnostice\Images\print.png" />
+    <Content Include="Content\Gnostice\Images\propertiesInfo.png" />
+    <Content Include="Content\Gnostice\Images\redact.png" />
+    <Content Include="Content\Gnostice\Images\region.png" />
+    <Content Include="Content\Gnostice\Images\rejected-disabled.png" />
+    <Content Include="Content\Gnostice\Images\rejected-enabled.png" />
+    <Content Include="Content\Gnostice\Images\reply.png" />
+    <Content Include="Content\Gnostice\Images\save.png" />
+    <Content Include="Content\Gnostice\Images\search-icon.png" />
+    <Content Include="Content\Gnostice\Images\shadow.png" />
+    <Content Include="Content\Gnostice\Images\sidebarToggle.png" />
+    <Content Include="Content\Gnostice\Images\signature.ico" />
+    <Content Include="Content\Gnostice\Images\small-grey-disclosure-arrow-down.png" />
+    <Content Include="Content\Gnostice\Images\spinner_transp.gif" />
+    <Content Include="Content\Gnostice\Images\success.png" />
+    <Content Include="Content\Gnostice\Images\texture.png" />
+    <Content Include="Content\Gnostice\Images\thumbnail.png" />
+    <Content Include="Content\Gnostice\Images\thumbnails.png" />
+    <Content Include="Content\Gnostice\Images\tick.png" />
+    <Content Include="Content\Gnostice\Images\togglemenu.png" />
+    <Content Include="Content\Gnostice\Images\user-16.png" />
+    <Content Include="Content\Gnostice\Images\warning.png" />
+    <Content Include="Content\Gnostice\Images\zoomin.png" />
+    <Content Include="Content\Gnostice\Images\zoommenuarrows.png" />
+    <Content Include="Content\Gnostice\Images\zoomout.png" />
+    <Content Include="Content\Gnostice\jquery-ui.css" />
     <Content Include="Content\img\avatar.png" />
     <Content Include="Content\img\document.png" />
     <None Include="Content\js\plugins\validator\jquery.validate-vsdoc.js" />
@@ -135,6 +234,10 @@
       <DependentUpon>DMSModel.edmx</DependentUpon>
       <LastGenOutput>DMSModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\js\Gnostice\documentviewer.min.js" />
+    <Content Include="Content\js\Gnostice\jquery-1.11.0.min.js" />
+    <Content Include="Content\js\Gnostice\jquery-ui.min.js" />
+    <Content Include="Content\js\Gnostice\ViewerInitializer.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
@@ -162,6 +265,7 @@
     <Content Include="Views\Document\Index.cshtml" />
     <Content Include="Views\Document\Create.cshtml" />
     <Content Include="Views\Document\Delete.cshtml" />
+    <Content Include="Views\Document\DocView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -8,6 +8,7 @@ namespace DMS
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{*DocumentHandler}", new { DocumentHandler = @".*\.axd(/.*)?" });
 
             routes.MapRoute(
                 name: "Default",
